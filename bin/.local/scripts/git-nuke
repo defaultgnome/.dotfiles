@@ -2,3 +2,16 @@
 
 git reset --hard origin/$(git branch --show-current)
 git clean -fd $(git rev-parse --show-toplevel)
+cat <<"EOF"
+     _.-^^---....,,--       
+ _--                  --_  
+<                        >)
+|                         | 
+ \._                   _./  
+    ```--. . , ; .--'''       
+          | |   |             
+       .-=||  | |=-.   
+       `-=#$%&%$#=-'   
+          | ;  :|     
+ _____.,-#%&$@%#&#~,._____
+EOF

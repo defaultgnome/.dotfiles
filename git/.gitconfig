@@ -1,6 +1,6 @@
 [user]
-	name = ArielBenichou
-	email = videojr3000@users.noreply.github.com
+	name = defaultgnome
+	email = defaultgnome@users.noreply.github.com
 [core]
   autocrlf = false
 	editor = vim
@@ -38,3 +38,5 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[rebase]
+	updateRefs = true

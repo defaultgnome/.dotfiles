@@ -142,7 +142,7 @@ if ! git show-ref --verify --quiet refs/heads/"$target_branch"; then
 fi
 
 # Determine the MR title
-if [ -n "$issue_number" ] && [[ "$latest_commit_message" != *"$issue_number"* ]]; then
+if [ -n "$issue_number" ]; then
   mr_title="$issue_number $latest_commit_message"
 else
   mr_title="$latest_commit_message"
