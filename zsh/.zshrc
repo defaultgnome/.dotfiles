@@ -161,3 +161,7 @@ zicompinit # <- https://wiki.zshell.dev/docs/guides/commands
 
 # eval "$(zoxide init zsh)"
 export PATH=$PATH:$HOME/.maestro/bin
+
+export MANPAGER='nvim +Man!'
+
+eval "$(zoxide init zsh)"

@@ -8,3 +8,28 @@ alias myip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '(
 alias git-ssh='git remote set-url origin "$(git remote get-url origin | sed -E '\''s,^https://([^/]*)/(.*)$,git@\1:\2,'\'')"'
 alias git-https='git remote set-url origin "$(git remote get-url origin | sed -E '\''s,^git@([^:]*):/*(.*)$,https://\1/\2,'\'')"'
 alias git-gnome='git remote set-url origin "$(git remote get-url origin | sed '\''s/ArielBenichou/defaultgnome/'\'')"'
+
+
+function switch_xcode() {
+  # Collect all Xcode apps in /Applications
+  local apps sel
+  apps=(/Applications/Xcode*.app)
+
+  if (( ${#apps[@]} == 0 )); then
+    echo "⚠️  No Xcode installs found in /Applications"
+    return 1
+  fi
+
+  # Let fzf show the list
+  sel=$(printf "%s\n" "${apps[@]}" | fzf --prompt="Select Xcode: ")
+  
+  # If user pressed ESC or nothing selected, abort
+  if [[ -z "$sel" ]]; then
+    echo "⚠️  No selection made."
+    return 1
+  fi
+
+  # Switch and report
+  sudo xcode-select --switch "$sel/Contents/Developer" \
+    && echo "✅  Active Xcode path: $(xcode-select -p)"
+}
