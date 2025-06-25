@@ -1,0 +1,31 @@
+theme = "catppuccin-mocha"
+
+# --- JetBrainsMono
+# font-family = "JetBrainsMono Nerd Font Mono"
+# font-thicken = true
+
+# --- Departure Mono
+font-family = "Departure Mono"
+font-family-bold = false
+font-style = no-bold
+font-synthetic-style = "false"
+
+quick-terminal-animation-duration = 0
+cursor-style = block
+shell-integration-features = no-cursor
+cursor-style-blink = false
+link-url = true
+mouse-hide-while-typing = true
+
+macos-titlebar-proxy-icon = hidden
+macos-icon = custom-style
+macos-icon-frame = plastic
+macos-icon-ghost-color = FFFFFF
+macos-icon-screen-color = 000000
+
+# Shaders
+# custom-shader = ./shaders/tft.glsl
+# TODO: the twitch and split could be cool if infrequent and less strength
+# custom-shader = ./shaders/glow-rgbsplit-twitchy.glsl
+custom-shader = ./shaders/bettercrt.glsl
+custom-shader = ./shaders/bloom.glsl
